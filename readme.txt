@@ -9,7 +9,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
-RB Theme Helper is used for theme options, acf post meta data, theme customizer data, default posts & pages data.
+RB Theme Helper is used for theme options.
 
 == Installation ==
 ### From your WordPress dashboard
@@ -25,4 +25,4 @@ RB Theme Helper from your Plugins page
 
 == Changelog ==
 = 1.0.0 =
-* 14.02.2024 - 1st submission
+* 09.04.2024 - 1st submission
