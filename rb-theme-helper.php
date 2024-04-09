@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       RB Theme Helper
  * Plugin URI:        https://github.com/BashirRased/wp-plugin-rb-theme-helper
- * Description:       RB Theme Helper is used for theme options, acf post meta data, theme customizer data, default posts & pages data. 
+ * Description:       RB Theme Helper is used for theme options.
  * Version:           1.0.0
  * Requires at least: 5.0
  * Tested up to: 6.2
@@ -13,7 +13,6 @@
  * Domain Path: 	  /languages
  * License:           GPL v2 or later
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Update URI:        https://github.com/BashirRased/wp-plugin-rb-theme-helper
  */
 
 // Exit if accessed directly.

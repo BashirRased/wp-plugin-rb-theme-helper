@@ -20,9 +20,9 @@ if( file_exists( dirname ( __FILE__ ) . '/kirki-section/general-section.php' ) )
 }
 
 // Type Section
-// if( file_exists( dirname ( __FILE__ ) . '/kirki-section/type-section.php' ) ) {
-// 	require_once ( dirname ( __FILE__ ) . '/kirki-section/type-section.php' );
-// }
+if( file_exists( dirname ( __FILE__ ) . '/kirki-section/type-section.php' ) ) {
+	require_once ( dirname ( __FILE__ ) . '/kirki-section/type-section.php' );
+}
 
 // Social Link Section
 if( file_exists( dirname ( __FILE__ ) . '/kirki-section/social-link-section.php' ) ) {
