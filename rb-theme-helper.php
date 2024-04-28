@@ -4,9 +4,9 @@
  * Plugin URI:        https://github.com/BashirRased/wp-plugin-rb-theme-helper
  * Description:       RB Theme Helper is used for theme options.
  * Version:           1.0.0
- * Requires at least: 5.0
- * Tested up to: 6.2
- * Requires PHP: 7.1
+ * Requires at least: 6.4
+ * Tested up to: 6.5
+ * Requires PHP: 7.0
  * Author:            Bashir Rased
  * Author URI:        https://bashirrased.com/
  * Text Domain:       rb-theme-helper
