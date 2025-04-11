@@ -2,11 +2,11 @@
 /**
  * Plugin Name:       RB Theme Helper
  * Plugin URI:        https://github.com/BashirRased/wp-plugin-rb-theme-helper
- * Description:       RB Theme Helper is used for theme options.
- * Version:           1.0.0
- * Requires at least: 6.4
- * Tested up to: 6.5
- * Requires PHP: 7.0
+ * Description:       RB Theme Helper is used for common theme options. This plugin add generate 3 common options color, typography & switch. It depends on the plugin Kirki Customizer Framework.
+ * Version:           1.0.1
+ * Requires at least: 6.6
+ * Tested up to: 6.7
+ * Requires PHP: 7.4
  * Author:            Bashir Rased
  * Author URI:        https://bashirrased.com/
  * Text Domain:       rb-theme-helper
