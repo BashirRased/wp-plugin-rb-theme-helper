@@ -1,11 +1,11 @@
 === RB Theme Helper ===
 Contributors: bashirrased2017
-Donate link: https://bashirrased.com/
+Donate link: https://bashir-rased.com/
 Tags: rb theme helper
 Requires at least: 6.6
 Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,7 +13,7 @@ RB Theme Helper is used for common theme options.
 
 == Description ==
 
-This plugin add generate 3 common options color, typography & switch. It depends on the plugin Kirki Customizer Framework.
+This plugin add generate common theme options & custom post menta. It depends on the plugin Kirki Customizer Framework.
 
 == Installation ==
 
@@ -56,3 +56,6 @@ Please see WordPress plugin directory.
 
 = 1.0.1 =
 * 17.01.2025 - 1st Updated & Many Changes
+
+= 1.0.2 =
+* 10.10.2025 - 2nd updated - smart & many changes
