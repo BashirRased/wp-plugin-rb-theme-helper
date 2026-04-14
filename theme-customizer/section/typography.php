@@ -31,7 +31,6 @@ new \Kirki\Field\Select(
 		'settings' => 'rbth_font_family_1',
 		'label'    => esc_html__( 'Font Family - 01', 'rb-theme-helper' ),
 		'section'  => 'rbth_theme_typography',
-		'default'  => 'roboto',
 		'choices'  => $GLOBALS['global_font_list'],
 	)
 );
@@ -42,7 +41,6 @@ new \Kirki\Field\Select(
 		'settings' => 'rbth_font_family_2',
 		'label'    => esc_html__( 'Font Family - 02', 'rb-theme-helper' ),
 		'section'  => 'rbth_theme_typography',
-		'default'  => 'roboto',
 		'choices'  => $GLOBALS['global_font_list'],
 	)
 );
@@ -53,7 +51,6 @@ new \Kirki\Field\Select(
 		'settings' => 'rbth_font_family_3',
 		'label'    => esc_html__( 'Font Family - 03', 'rb-theme-helper' ),
 		'section'  => 'rbth_theme_typography',
-		'default'  => 'roboto',
 		'choices'  => $GLOBALS['global_font_list'],
 	)
 );

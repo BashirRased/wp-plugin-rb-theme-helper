@@ -23,7 +23,7 @@ new \Kirki\Panel(
 );
 
 // Include Sections.
-$sections = array(
+$rbth_sections = array(
 	'wp-section',
 	'general',
 	'typography',
@@ -31,9 +31,11 @@ $sections = array(
 	'blog',
 );
 
-foreach ( $sections as $section ) {
-	$section_file = __DIR__ . '/section/' . $section . '.php';
-	if ( file_exists( $section_file ) ) {
-		require_once $section_file;
+foreach (
+	$rbth_sections as $rbth_section
+	) {
+	$rbth_section_file = __DIR__ . '/section/' . $rbth_section . '.php';
+	if ( file_exists( $rbth_section_file ) ) {
+		require_once $rbth_section_file;
 	}
 }

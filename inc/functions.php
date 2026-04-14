@@ -41,17 +41,6 @@ if ( ! function_exists( 'rbth_theme_custom_styles' ) ) {
 	 * @return void
 	 */
 	function rbth_theme_custom_styles() {
-		$site_width_setting = get_theme_mod( 'rbth_site_width', 'custom-width' );
-		$page_width         = get_theme_mod( 'rbth_site_box_width', 1320 );
-
-		if ( 'full-width' === $site_width_setting ) {
-			$page_width = '100%';
-		} elseif ( 'custom-width' === $site_width_setting ) {
-			$page_width = $page_width . 'px';
-		} else {
-			$page_width = '1320px';
-		}
-
 		/*
 		|--------------------------------------------------------------------------
 		| Theme Colors
@@ -67,38 +56,26 @@ if ( ! function_exists( 'rbth_theme_custom_styles' ) ) {
 		// Primary & Secondary fallbacks.
 		if ( '' !== $primary_raw ) {
 			$primary = $primary_raw;
-		} else {
-			$primary = '#f93601';
 		}
 
 		if ( '' !== $primary_dark_raw ) {
 			$primary_dark = $primary_dark_raw;
-		} else {
-			$primary_dark = '#d41900';
 		}
 
 		if ( '' !== $primary_light_raw ) {
 			$primary_light = $primary_light_raw;
-		} else {
-			$primary_light = '#fca78e';
 		}
 
 		if ( '' !== $secondary_raw ) {
 			$secondary = $secondary_raw;
-		} else {
-			$secondary = '#007bff';
 		}
 
 		if ( '' !== $secondary_dark_raw ) {
 			$secondary_dark = $secondary_dark_raw;
-		} else {
-			$secondary_dark = '#0056b3';
 		}
 
 		if ( '' !== $secondary_light_raw ) {
 			$secondary_light = $secondary_light_raw;
-		} else {
-			$secondary_light = '#66b2ff';
 		}
 
 		// Convert HEX to RGB for rgba().
@@ -130,8 +107,6 @@ if ( ! function_exists( 'rbth_theme_custom_styles' ) ) {
 			$color_raw = sanitize_hex_color( get_theme_mod( "rbth_color_$i", '' ) );
 			if ( '' !== $color_raw ) {
 				$multi_colors[ $i ] = $color_raw;
-			} else {
-				$multi_colors[ $i ] = $default_color;
 			}
 		}
 
@@ -185,20 +160,6 @@ if ( ! function_exists( 'rbth_theme_custom_styles' ) ) {
 			--color-{$i}-rgb: $rgb;";
 		}
 
-		$custom_css .= '
-		}			
-		@media (min-width: 1401px) and (max-width: 1980px) {		
-			.container-xxl,
-			.container-xl,
-			.container-lg,
-			.container-md,
-			.container-sm,
-			.container {
-				max-width: ' . esc_attr( $page_width ) . ';
-			}		
-		}
-		';
-
 		/*
 		|--------------------------------------------------------------------------
 		| Register & Enqueue
@@ -219,213 +180,44 @@ if ( ! function_exists( 'rbth_theme_custom_styles' ) ) {
 	add_action( 'wp_head', 'rbth_theme_custom_styles', 99 );
 }
 
-/**
- * Build PHP date format string from Kirki settings
- *
- * @return string
- */
-function rbth_get_custom_date_format() {
-	$sorting = get_theme_mod( 'rbth_date_meta_sorting', array( 'day', 'month', 'year' ) );
-
-	$format_parts = array();
-
-	foreach ( $sorting as $item ) {
-
-		switch ( $item ) {
-			/* Weekday Prefix */
-			case 'week_prefix':
-				$week_prefix = get_theme_mod( 'rbth_date_meta_week_prefix', 'option-1' );
-				switch ( $week_prefix ) {
-					case 'option-2':
-						$format_parts[] = '-';
-						break;
-					case 'option-3':
-						$format_parts[] = '/';
-						break;
-					case 'option-4':
-						$format_parts[] = ' ';
-						break;
-					default:
-						$format_parts[] = ', ';
-				}
-				break;
-
-			/* Weekday */
-			case 'week':
-				$week = get_theme_mod( 'rbth_date_meta_week', 'option-1' );
-				switch ( $week ) {
-					case 'option-2':
-						$format_parts[] = 'D';
-						break;
-					default:
-						$format_parts[] = 'l';
-				}
-				break;
-
-			/* Day Prefix */
-			case 'day_prefix':
-				$day_prefix = get_theme_mod( 'rbth_date_meta_day_prefix', 'option-1' );
-				switch ( $day_prefix ) {
-					case 'option-2':
-						$format_parts[] = '-';
-						break;
-					case 'option-3':
-						$format_parts[] = '/';
-						break;
-					case 'option-4':
-						$format_parts[] = ' ';
-						break;
-					default:
-						$format_parts[] = ', ';
-				}
-				break;
-
-			/* Day */
-			case 'day':
-				$day = get_theme_mod( 'rbth_date_meta_day', 'option-1' );
-				switch ( $day ) {
-					case 'option-2':
-						$format_parts[] = 'j';
-						break;
-					case 'option-3':
-						$format_parts[] = 'jS';
-						break;
-					default:
-						$format_parts[] = 'd';
-				}
-				break;
-
-			/* Month Prefix */
-			case 'month_prefix':
-				$month_prefix = get_theme_mod( 'rbth_date_meta_month_prefix', 'option-1' );
-				switch ( $month_prefix ) {
-					case 'option-2':
-						$format_parts[] = '-';
-						break;
-					case 'option-3':
-						$format_parts[] = '/';
-						break;
-					case 'option-4':
-						$format_parts[] = ' ';
-						break;
-					default:
-						$format_parts[] = ', ';
-				}
-				break;
-
-			/* Month */
-			case 'month':
-				$month = get_theme_mod( 'rbth_date_meta_month', 'option-1' );
-				switch ( $month ) {
-					case 'option-2':
-						$format_parts[] = 'n';
-						break;
-					case 'option-3':
-						$format_parts[] = 'F';
-						break;
-					case 'option-4':
-						$format_parts[] = 'M';
-						break;
-					default:
-						$format_parts[] = 'm';
-				}
-				break;
-
-			/* Year Prefix */
-			case 'year_prefix':
-				$year_prefix = get_theme_mod( 'rbth_date_meta_year_prefix', 'option-1' );
-				switch ( $year_prefix ) {
-					case 'option-2':
-						$format_parts[] = '-';
-						break;
-					case 'option-3':
-						$format_parts[] = '/';
-						break;
-					case 'option-4':
-						$format_parts[] = ' ';
-						break;
-					default:
-						$format_parts[] = ', ';
-				}
-				break;
-
-			/* Year */
-			case 'year':
-				$year = get_theme_mod( 'rbth_date_meta_year', 'option-2' );
-				switch ( $year ) {
-					case 'option-2':
-						$format_parts[] = 'Y';
-						break;
-					default:
-						$format_parts[] = 'y';
-				}
-				break;
-
-			/* Time Prefix */
-			case 'time_prefix':
-				$time_prefix = get_theme_mod( 'rbth_date_meta_time_prefix', 'option-1' );
-				switch ( $time_prefix ) {
-					case 'option-2':
-						$format_parts[] = ' at ';
-						break;
-					case 'option-3':
-						$format_parts[] = ' @ ';
-						break;
-					default:
-						$format_parts[] = ', ';
-				}
-				break;
-
-			/* Time */
-			case 'time':
-				$time = get_theme_mod( 'rbth_date_meta_time', 'option-1' );
-				switch ( $time ) {
-					case 'option-2':
-						$format_parts[] = 'h:i a';
-						break;
-					case 'option-3':
-						$format_parts[] = 'g:i A';
-						break;
-					case 'option-4':
-						$format_parts[] = 'h:i A';
-						break;
-					default:
-						$format_parts[] = 'g:i a';
-				}
-				break;
+if ( ! function_exists( 'rbth_excerpt_dots' ) ) {
+	/**
+	 * Filter excerpt more text (dots).
+	 *
+	 * @return string
+	 */
+	function rbth_excerpt_dots() {
+		$excerpt_more = get_theme_mod( 'rbth_excerpt_more_text', 'off' );
+		// If enabled, hide dots.
+		if ( $excerpt_more ) {
+			return '';
 		}
+		// Default dots.
+		return '&hellip;';
 	}
-
-	// Space-separated date format.
-	return implode( '', $format_parts );
+	add_filter( 'excerpt_more', 'rbth_excerpt_dots' );
 }
 
-/**
- * Get blog date meta format (default | custom | relative)
- *
- * @return string
- */
-function rbth_blogpage_date_format() {
-	$format = get_theme_mod( 'rbth_date_meta_format', 'default' );
+if ( ! function_exists( 'rbth_excerpt_words' ) ) {
+	/**
+	 * Filter post excerpt length based on Customizer setting.
+	 *
+	 * @param int $length Default excerpt length.
+	 * @return int
+	 */
+	function rbth_excerpt_words( $length ) {
 
-	// Default WordPress date format.
-	if ( 'default' === $format ) {
-		return get_the_time( get_option( 'date_format' ) );
+		$excerpt_length = get_theme_mod( 'rbth_excerpt_word', 30 );
+
+		// Ensure a valid integer.
+		$excerpt_length = absint( $excerpt_length );
+
+		// Fallback safety.
+		if ( 0 === $excerpt_length ) {
+			return $length;
+		}
+
+		return $excerpt_length;
 	}
-
-	// Custom (Kirki-driven) date format.
-	if ( 'custom' === $format ) {
-		return get_the_time( rbth_get_custom_date_format() );
-	}
-
-	// Relative time (e.g. 11 months ago).
-	if ( 'relative' === $format ) {
-		return human_time_diff(
-			get_the_time( 'U' ),
-			time()
-		) . ' ' . esc_html__( 'ago', 'rb-theme-helper' );
-	}
-
-	// Fallback.
-	return get_the_time( get_option( 'date_format' ) );
 }
+add_filter( 'excerpt_length', 'rbth_excerpt_words', 999 );

@@ -6,10 +6,14 @@
  * @subpackage RB_Theme_Helper
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Global font list for RB Theme Helper (Expanded).
  */
-$global_font_list = array(
+$rbth_global_font_list = array(
 	// Sans-serif (Clean, Modern).
 	'roboto'            => esc_html__( '"Roboto", sans-serif', 'rb-theme-helper' ),
 	'poppins'           => esc_html__( '"Poppins", sans-serif', 'rb-theme-helper' ),
@@ -59,6 +63,6 @@ $global_font_list = array(
 	'mulish'            => esc_html__( '"Mulish", sans-serif', 'rb-theme-helper' ),
 	'urbanist'          => esc_html__( '"Urbanist", sans-serif', 'rb-theme-helper' ),
 	'karla'             => esc_html__( '"Karla", sans-serif', 'rb-theme-helper' ),
-);
+); // phpcs:disable WordPress.NamingConventions.PrefixAllGlobals
 
-$GLOBALS['global_font_list'] = $global_font_list;
+$GLOBALS['global_font_list'] = $rbth_global_font_list; // phpcs:disable WordPress.NamingConventions.PrefixAllGlobals

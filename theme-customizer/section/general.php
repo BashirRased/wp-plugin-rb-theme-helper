@@ -26,42 +26,6 @@ new \Kirki\Section(
 	)
 );
 
-// Page Width.
-new \Kirki\Field\Select(
-	array(
-		'settings' => 'rbth_site_width',
-		'label'    => esc_html__( 'Page Width', 'rb-theme-helper' ),
-		'section'  => 'rbth_general',
-		'default'  => 'custom-width',
-		'choices'  => array(
-			'full-width'   => esc_html__( 'Full Width', 'rb-theme-helper' ),
-			'custom-width' => esc_html__( 'Box Width', 'rb-theme-helper' ),
-		),
-	)
-);
-
-// Box Width.
-new \Kirki\Field\Number(
-	array(
-		'settings'        => 'rbth_site_box_width',
-		'label'           => esc_html__( 'Box Width', 'rb-theme-helper' ),
-		'section'         => 'rbth_general',
-		'choices'         => array(
-			'min'  => 1320,
-			'max'  => 1920,
-			'step' => 1,
-		),
-		'default'         => 1320,
-		'active_callback' => array(
-			array(
-				'setting'  => 'rbth_site_width',
-				'operator' => '==',
-				'value'    => 'custom-width',
-			),
-		),
-	)
-);
-
 // Preloader On/Off.
 new \Kirki\Field\Checkbox_Switch(
 	array(
@@ -81,20 +45,6 @@ new \Kirki\Field\Checkbox_Switch(
 	array(
 		'settings' => 'rbth_header_top',
 		'label'    => esc_html__( 'Header Top On/Off', 'rb-theme-helper' ),
-		'section'  => 'rbth_general',
-		'default'  => 'off',
-		'choices'  => array(
-			'on'  => esc_html__( 'Enable', 'rb-theme-helper' ),
-			'off' => esc_html__( 'Disable', 'rb-theme-helper' ),
-		),
-	)
-);
-
-// Scroll To Top On/Off.
-new \Kirki\Field\Checkbox_Switch(
-	array(
-		'settings' => 'rbth_scroll_to_top',
-		'label'    => esc_html__( 'Scroll To Top On/Off', 'rb-theme-helper' ),
 		'section'  => 'rbth_general',
 		'default'  => 'off',
 		'choices'  => array(
@@ -158,11 +108,79 @@ new \Kirki\Field\Color(
 // Breadcrumbs Overlay Color.
 new \Kirki\Field\Color(
 	array(
-		'settings' => 'color_setting_rgba',
+		'settings' => 'rbth_breadcrumbs_overlay_color',
 		'label'    => esc_html__( 'Breadcrumbs Overlay Color', 'rb-theme-helper' ),
 		'section'  => 'rbth_general',
 		'choices'  => array(
 			'alpha' => true,
 		),
+	)
+);
+
+// Scroll To Top On/Off.
+new \Kirki\Field\Checkbox_Switch(
+	array(
+		'settings' => 'rbth_scroll_to_top',
+		'label'    => esc_html__( 'Scroll To Top On/Off', 'rb-theme-helper' ),
+		'section'  => 'rbth_general',
+		'default'  => 'off',
+		'choices'  => array(
+			'on'  => esc_html__( 'Enable', 'rb-theme-helper' ),
+			'off' => esc_html__( 'Disable', 'rb-theme-helper' ),
+		),
+	)
+);
+
+// Copyright On/Off.
+new \Kirki\Field\Checkbox_Switch(
+	array(
+		'settings' => 'rbth_copyright_switch',
+		'label'    => esc_html__( 'Copyright On/Off', 'rb-theme-helper' ),
+		'section'  => 'rbth_general',
+		'default'  => 'off',
+		'choices'  => array(
+			1 => esc_html__( 'Enable', 'rb-theme-helper' ),
+			0 => esc_html__( 'Disable', 'rb-theme-helper' ),
+		),
+	)
+);
+
+// Copyright Text.
+new \Kirki\Field\Editor(
+	array(
+		'settings'        => 'rbth_copyright_text',
+		'label'           => esc_html__( 'Copyright Text', 'rb-theme-helper' ),
+		'section'         => 'rbth_general',
+		'active_callback' => function () {
+			$val = get_theme_mod( 'rbth_copyright_switch', 0 );
+			return 1 === (int) $val;
+		},
+	)
+);
+
+// Powered By On/Off.
+new \Kirki\Field\Checkbox_Switch(
+	array(
+		'settings' => 'rbth_poweredby_switch',
+		'label'    => esc_html__( 'Powered By On/Off', 'rb-theme-helper' ),
+		'section'  => 'rbth_general',
+		'default'  => 'off',
+		'choices'  => array(
+			1 => esc_html__( 'Enable', 'rb-theme-helper' ),
+			0 => esc_html__( 'Disable', 'rb-theme-helper' ),
+		),
+	)
+);
+
+// Powered By Text.
+new \Kirki\Field\Editor(
+	array(
+		'settings'        => 'rbth_poweredby_text',
+		'label'           => esc_html__( 'Powered By Text', 'rb-theme-helper' ),
+		'section'         => 'rbth_general',
+		'active_callback' => function () {
+			$val = get_theme_mod( 'rbth_poweredby_switch', 0 );
+			return 1 === (int) $val;
+		},
 	)
 );

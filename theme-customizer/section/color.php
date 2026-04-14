@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$heading_css = "margin:20px 0 10px; font-family:'Roboto', sans-serif; font-weight:700; font-size:25px;";
+$rbth_heading_css = "margin:20px 0 10px; font-family:'Roboto', sans-serif; font-weight:700; font-size:25px;";
 
 /**
  * ==================================================
@@ -35,7 +35,7 @@ new \Kirki\Field\Custom(
 	array(
 		'settings' => 'rbth_group_primary_colors',
 		'section'  => 'rbth_theme_color',
-		'default'  => '<h1 style="' . $heading_css . '">' . esc_html__( 'Primary Colors', 'rb-theme-helper' ) . '</h1>',
+		'default'  => '<h1 style="' . $rbth_heading_css . '">' . esc_html__( 'Primary Colors', 'rb-theme-helper' ) . '</h1>',
 	)
 );
 
@@ -82,7 +82,7 @@ new \Kirki\Field\Custom(
 	array(
 		'settings' => 'rbth_group_secondary_colors',
 		'section'  => 'rbth_theme_color',
-		'default'  => '<h1 style="' . $heading_css . '">' . esc_html__( 'Secondary Colors', 'rb-theme-helper' ) . '</h1>',
+		'default'  => '<h1 style="' . $rbth_heading_css . '">' . esc_html__( 'Secondary Colors', 'rb-theme-helper' ) . '</h1>',
 	)
 );
 
@@ -94,7 +94,6 @@ new \Kirki\Field\Color(
 		'settings' => 'rbth_secondary_color',
 		'label'    => esc_html__( 'Secondary Color', 'rb-theme-helper' ),
 		'section'  => 'rbth_theme_color',
-		'default'  => '#007bff',
 	)
 );
 
@@ -103,7 +102,6 @@ new \Kirki\Field\Color(
 		'settings' => 'rbth_secondary_color_dark',
 		'label'    => esc_html__( 'Secondary Color - Dark', 'rb-theme-helper' ),
 		'section'  => 'rbth_theme_color',
-		'default'  => '#0056b3',
 	)
 );
 
@@ -112,7 +110,6 @@ new \Kirki\Field\Color(
 		'settings' => 'rbth_secondary_color_light',
 		'label'    => esc_html__( 'Secondary Color - Light', 'rb-theme-helper' ),
 		'section'  => 'rbth_theme_color',
-		'default'  => '#66b2ff',
 	)
 );
 
@@ -123,7 +120,7 @@ new \Kirki\Field\Custom(
 	array(
 		'settings' => 'rbth_group_multi_colors',
 		'section'  => 'rbth_theme_color',
-		'default'  => '<h1 style="' . $heading_css . '">' . esc_html__( 'Multi Colors', 'rb-theme-helper' ) . '</h1>',
+		'default'  => '<h1 style="' . $rbth_heading_css . '">' . esc_html__( 'Multi Colors', 'rb-theme-helper' ) . '</h1>',
 	)
 );
 
